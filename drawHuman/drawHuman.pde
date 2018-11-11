@@ -5,13 +5,30 @@ void setup(){
 }
  void draw(){
    background(255, 0, 0);
-   if(keyPressed && keyCode == LEFT){
+
+ int a = doubleNum(10);
+ int b = doubleNum(135);
+ int c = maxNum(100, 30);
+ float deg = deg2rad(180);
+ println("a = " + a);
+ println("b = " + b);
+ println("c = " + c);
+ println("degree = " + deg);
+   
+   if(keyPressed && key == 'a'){
      xpos--;
-   }else if(keyPressed && keyCode == RIGHT){
+   }else if(keyPressed && key == 'd'){
      xpos++; 
    }
-   drawHuman(0, 0);
- }
+   else if(keyPressed && key == 'w'){
+     xpos--;
+   }
+   else if(keyPressed && key == 's'){
+     xpos++;
+   }  
+     
+   drawHuman(xpos, ypos);
+    }
  
  
 void makeFigure(int x, int y){
@@ -27,3 +44,16 @@ void drawHuman(int x, int y){
     line(90 +  xpos, 150 + ypos, 80 + xpos, 160 + ypos);
     line(110 + xpos,150 + ypos,120  + xpos, 160 + ypos);
     }
+    
+ int doubleNum(int num){
+   return(2*num);
+ }
+ int maxNum(int num1, int num2){
+    if(num1 > num2){
+      return num1;
+    }else{
+      return num2;
+    }
+ }
+ float deg2rad(float degree){
+   float rad = (degree 
