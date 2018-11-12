@@ -37,7 +37,7 @@ void setup(){
   bullet = loadImage("bullet.png");
   badrider = loadImage("badrider.png"); 
   explosion = loadImage("explosion.png");
-  background= loadImage("background.jpeg");
+  background = loadImage("background.jpeg");
 }
  
 void draw() {  
@@ -49,6 +49,7 @@ void draw() {
        shipY = 300;
        riderX = 500;
        riderY = 300;
+       counter = 0;
     }
     showGameOverText();
     return; 
@@ -89,12 +90,10 @@ void draw() {
     drawBadrider();
   }
   
-  
-  showCounter();  
- 
+  showCounter();
 }
 void drawMyShip(){
-image(sidegoodrider, shipX, shipY, shipW, shipH);
+  image(sidegoodrider, shipX, shipY, shipW, shipH);
   
   if(keyPressed && keyCode == UP){
     if(shipY - mySpeed >= 0){
